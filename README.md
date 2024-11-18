@@ -2,19 +2,7 @@
 
 Spring Boot application demonstrating using Kafka Connect for Change Data Capture (CDC) to publish outbound events to Kafka from MongoDB.
 
-This repo accompanies the following article:
-
-- [Kafka Connect: CDC with Debezium and MongoDB](https://www.lydtechconsulting.com/blog-kafka-connect-debezium-mongodb.html): Using Change Data Capture (CDC) with Debezium to stream events from the NoSQL MongoDB database to the Kafka messaging broker.
-
-## Running The Demo
-
-The demo steps are as follows (and detailed below):
-- Start the Docker containers (Kafka, Zookeeper, MongoDB, Debezium) via docker-compose.
-- Submit the Kafka Connect connector definition via curl.
-- Start the Spring Boot demo application.
-- Start a console-consumer to listen on the outbox topic (populated by Debezium).
-- Submit a REST request to the application to create an item
-- The application creates the item entity.  The source connector writes an event to the outbound topic via Change Data Capture (CDC).  The console-consumer consumes this event.
+ Using Change Data Capture (CDC) with Debezium to stream events from the NoSQL MongoDB database to the Kafka messaging broker.
 
 Demo steps breakdown:
 
