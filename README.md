@@ -167,27 +167,3 @@ Manual clean up (if left containers up):
 docker rm -f $(docker ps -aq)
 ```
 
-## Kafka Connect / Debezium
-
-### Create MongoDB connector
-
-The Debezium MongoDB source connector configuration is defined in `connector/debezium-mongodb-source-connector.json`.
-
-https://debezium.io/documentation/reference/stable/connectors/mongodb.html
-
-When an item is created, updated or deleted, CDC results in an outbound event being emitted with the change information.
-
-The component tests create and delete the connector via the `DebeziumClient` class in the `component-test-framework`.
-
-## Docker Clean Up
-
-Manual clean up (if left containers up):
-```
-docker rm -f $(docker ps -aq)
-```
-
-Further docker clean up if network/other issues:
-```
-docker system prune
-docker volume prune
-```
