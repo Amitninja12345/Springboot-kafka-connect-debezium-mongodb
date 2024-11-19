@@ -134,33 +134,6 @@ Stop containers:
 docker-compose down
 ```
 
-## Component Tests
-
-The test demonstrates the application publishing events using Debezium (Kafka Connect) for Change Data Capture.   They use a dockerised Kafka broker, a dockerised Debezium Kafka Connect, a dockerised MongoDB database, and a dockerised instance of the application.
-
-To test the application running against the Apache Kafka native instance, set `kafka.enabled` to `false` and `kafka.native.enabled` to `true` in the `pom.xml`.
-
-For more on the component tests see: https://github.com/lydtechconsulting/component-test-framework
-
-Build Spring Boot application jar:
-```
-mvn clean install
-```
-
-Build Docker container:
-```
-docker build -t ct/kafka-connect-debezium-mongodb:latest .
-```
-
-Run tests:
-```
-mvn test -Pcomponent
-```
-
-Run tests leaving containers up:
-```
-mvn test -Pcomponent -Dcontainers.stayup
-```
 
 Manual clean up (if left containers up):
 ```
